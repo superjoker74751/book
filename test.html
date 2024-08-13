@@ -1,1 +1,25 @@
-<h1>test</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch Username</title>
+</head>
+<body>
+    <h1>Fetch Username Example</h1>
+    <button onclick="fetchUsername()">Get Username</button>
+    <script>
+        function fetchUsername() {
+            fetch('http://8.147.117.95')
+                .then(response => response.json())
+                .then(data => {
+                    alert('Username: ' + data.username);
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('Failed to fetch username');
+                });
+        }
+    </script>
+</body>
+</html>
