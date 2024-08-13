@@ -10,10 +10,10 @@
     <button onclick="fetchUsername()">Get Username</button>
     <script>
         function fetchUsername() {
-            fetch('http://8.147.117.95')
+            fetch('https://httpbin.org/get')
                 .then(response => response.json())
                 .then(data => {
-                    alert('Username: ' + data.username);
+                    alert('origin: ' + data.origin);
                 })
                 .catch(error => {
                     console.error('Error:', error);
